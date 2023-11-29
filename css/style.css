@@ -1,5 +1,64 @@
+/* RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* debug */
+body {
+  font-size: 18;
+}
+/* GENERICS */
+
+/* WINDOW */
+.window {
+  height: 100vh;
+  /* padding-right: 10px;
+  padding-left: 10px; */
+  background-color: #222222;
+}
+/* SCREEN */
+
+/* NAVIGATION MENU BAR */
+.nav {
+  color: white;
+  height: 100px;
+  display: flex;
+  /* justify-content: space-between; */
+  /* position */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+
+  /* debug */
+  border: 1px dashed green;
+}
+
+.block-1,
+.block-2,
+.block-3 {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.block-2 {
+  flex: 1;
+}
+
+.block-1 *,
+.block-2 *,
+.block-3 * {
+  display: block;
+  text-align: center;
+  /* debug */
+  border: 1px dashed red;
+}
+
+.nav i {
+  font-size: 2.5rem;
 }
