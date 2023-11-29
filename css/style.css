@@ -1,3 +1,7 @@
+:root {
+  --nav-height: 80px;
+  --screen-settings-height: 60px;
+}
 /* RESET */
 
 * {
@@ -11,10 +15,17 @@ body {
   font-size: 18;
 }
 /* GENERICS */
+.user {
+  width: calc(100% / 6 - 8px);
+  aspect-ratio: 1.5;
+  background-color: lightgoldenrodyellow;
+  margin: 8px 4px;
+}
 
 /* WINDOW */
 .window {
   height: 100vh;
+  overflow: hidden;
   /* padding-right: 10px;
   padding-left: 10px; */
   background-color: #222222;
@@ -27,10 +38,15 @@ body {
 }
 /* SCREEN SETTINGS */
 .screen .screen--settings {
+  height: var(--screen-settings-height);
   padding: 5px 5px 15px;
   display: flex;
   justify-content: flex-end;
 
+  /* position */
+  position: sticky;
+  top: 0;
+  z-index: 1;
   /* debug */
   border: 1px dashed lightcoral;
 }
@@ -39,14 +55,26 @@ body {
   padding: 3px;
   background-color: #333333;
   border-radius: 6px;
-  /* position */
-  position: sticky;
-  top: 0;
 }
+
+/* SCREEN VIEW */
+.screen .screen--view {
+  background-color: black;
+  height: calc(100vh - var(--nav-height) - var(--screen-settings-height));
+  padding: 20px 50px;
+  overflow: auto;
+  /* FLEX */
+  display: flex;
+  flex-wrap: wrap;
+  /* debug */
+  border: 1px dashed lightgreen;
+}
+
 /* NAVIGATION MENU BAR */
 .nav {
+  background-color: #222222;
   color: white;
-  height: 100px;
+  height: var(--nav-height);
   display: flex;
   /* justify-content: space-between; */
   /* position */
